@@ -14,7 +14,7 @@
 
     "INBOUND": {
       "description": "INBOUND",
-      "value": "{\n    \"listen\": \"0.0.0.0\",\n    \"port\": 12345,\n    \"protocol\": \"vless\",\n    \"settings\": {\n        \"clients\": [\n            {\n                \"id\": \"\"\n            }\n        ],\n        \"decryption\": \"none\"\n    },\n    \"streamSettings\": {\n        \"network\": \"ws\",\n        \"security\": \"none\",\n        \"wsSettings\": {\n            \"acceptProxyProtocol\": false,\n            \"path\": \"\"\n        }\n    }\n}"
+      "value": "{\n    \"listen\": \"0.0.0.0\",\n    \"port\": 12345,\n    \"protocol\": \"vless\",\n    \"settings\": {\n        \"clients\": [\n            {\n                \"id\": \"\"\n            }\n        ],\n        \"decryption\": \"none\"\n    },\n    \"streamSettings\": {\n        \"network\": \"ws\",\n        \"security\": \"none\",\n        \"wsSettings\": {\n            \"acceptProxyProtocol\": false,\n            \"path\": \"${Xray_Path}\"\n        }\n    }\n}"
     },
 
     "VER": {
