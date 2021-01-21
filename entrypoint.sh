@@ -32,14 +32,13 @@ cd /wwwroot
 tar xvf wwwroot.tar.gz
 rm -rf wwwroot.tar.gz
 
-
 sed -e "/^#/d"\
-    -e "s|\${INBOUND}|${INBOUND}|g"\
     /conf/Xray.template.json >  /xraybin/.config.json
 
-sed -e "/^#/d"\
-    -e "s|\${Xray_Path}|${Xray_Path}|g"\
-    /xraybin/.config.json >  /xraybin/config.json
+config=`cat  /xraybin/.config.json`
+config=${config//\$\{INBOUND\}/${INBOUND}}
+config=${config//\$\{Xray_Path\}/${Xray_Path}}
+echo ${config} > /xraybin/config.json
 
 echo /xraybin/config.json
 cat /xraybin/config.json
