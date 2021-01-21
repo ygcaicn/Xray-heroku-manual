@@ -29,16 +29,16 @@ chmod +x ./xray
 ls -al
 
 cd /wwwroot
-tar xvf wwwroot.tar.gz
+tar xf wwwroot.tar.gz
 rm -rf wwwroot.tar.gz
 
 sed -e "/^#/d"\
     /conf/Xray.template.json >  /xraybin/.config.json
 
-config=`cat  /xraybin/.config.json`
+config=`cat /xraybin/.config.json`
 config=${config//\$\{INBOUND\}/${INBOUND}}
 config=${config//\$\{Xray_Path\}/${Xray_Path}}
-echo ${config} > /xraybin/config.json
+echo -e "${config}" > /xraybin/config.json
 
 echo /xraybin/config.json
 cat /xraybin/config.json
@@ -53,7 +53,7 @@ fi
 
 sed -e "/^#/d"\
     -e "s/\${PORT}/${PORT}/g"\
-    -e "s|\${Xray_Path}|${Xray_Path}|g"
+    -e "s|\${Xray_Path}|${Xray_Path}|g"\
     -e "$s"\
     /conf/nginx.template.conf > /etc/nginx/conf.d/ray.conf
 echo /etc/nginx/conf.d/ray.conf
