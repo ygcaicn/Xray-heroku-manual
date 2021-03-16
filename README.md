@@ -18,15 +18,15 @@ vmess+ws+tls(tls由Heroku处理)
     "port": 12345,
     "protocol": "vmess",
     "settings": {
-    "clients": [
-        {
-        "id": "59e385e3-9bb2-4caa-a96b-fa5e0fbcdb54",
-        "level": 0,
-        "alterId": 0,
-        "email": "love@xray.com"
-        }
-    ],
-    "disableInsecureEncryption": false
+        "clients": [
+            {
+            "id": "59e385e3-9bb2-4caa-a96b-fa5e0fbcdb54",
+            "level": 0,
+            "alterId": 0,
+            "email": "love@xray.com"
+            }
+        ],
+        "disableInsecureEncryption": false
     },
     "streamSettings": {
         "network": "ws",
